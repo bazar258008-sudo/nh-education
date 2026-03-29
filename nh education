@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NH Education Marksheet</title>
+<style>
+body { font-family: Arial; text-align: center; }
+table { margin: auto; }
+input { padding: 5px; margin: 5px; }
+button { padding: 10px; }
+</style>
+</head>
+
+<body>
+
+<h2>NH Education Marksheet</h2>
+
+<input type="text" id="name" placeholder="Student Name"><br>
+<input type="text" id="roll" placeholder="Roll Number"><br>
+
+<table border="1">
+<tr>
+<th>Subject</th>
+<th>Marks</th>
+</tr>
+
+<tr><td>English</td><td><input type="number" id="s1"></td></tr>
+<tr><td>Math</td><td><input type="number" id="s2"></td></tr>
+<tr><td>Science</td><td><input type="number" id="s3"></td></tr>
+<tr><td>Social</td><td><input type="number" id="s4"></td></tr>
+<tr><td>Assamese</td><td><input type="number" id="s5"></td></tr>
+
+</table>
+
+<button onclick="calculate()">Calculate</button>
+
+<h3 id="result"></h3>
+
+<script>
+function calculate() {
+let total = 
+Number(s1.value)+Number(s2.value)+Number(s3.value)+Number(s4.value)+Number(s5.value);
+
+let percentage = total / 5;
+
+let grade = "";
+
+if(percentage >= 80) grade="A";
+else if(percentage >= 60) grade="B";
+else grade="C";
+
+document.getElementById("result").innerHTML =
+"Total: " + total + "<br>Percentage: " + percentage.toFixed(2) + "%" + "<br>Grade: " + grade;
+}
+</script>
+
+</body>
+</html>
